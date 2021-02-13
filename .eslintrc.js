@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2021: true,
+    mocha: true,
   },
   extends: [
     'airbnb-base',
@@ -13,5 +14,6 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'no-continue': 'off',
+    'no-underscore-dangle': 'off',
   },
 };
