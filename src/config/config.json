@@ -1,3 +1,6 @@
 {
-    "prefix":"-"
+    "prefix":"-",
+    "hackthebox":{
+        "team_id": "3263"
+    }
 }
