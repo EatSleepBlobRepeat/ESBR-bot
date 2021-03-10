@@ -2,8 +2,7 @@ const Discord = require('discord.js');
 const BOT_CONFIG = require('./config');
 
 const client = new Discord.Client();
-const commandHandler = require('./commands');
-require('./commands');
+const commandHandler = require('./config/injectCogs');
 
 client.commands = new Discord.Collection();
 commandHandler(client);

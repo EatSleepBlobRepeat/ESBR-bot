@@ -2,6 +2,7 @@ const config = require('../../config');
 
 const constants = {};
 constants.TEAM_ID = config.hackthebox.team_id;
+
 constants.HTB_HEADER = {
   authority: 'www.hackthebox.eu',
   pragma: 'no-cache',

@@ -1,4 +1,4 @@
-const Command = require('./base');
+const Command = require('../../base/commands/base');
 
 const executeFunc = (msg) => {
   msg.channel.send('Worldddd');

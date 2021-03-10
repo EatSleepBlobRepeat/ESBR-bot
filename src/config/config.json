@@ -2,5 +2,12 @@
     "prefix":"-",
     "hackthebox":{
         "team_id": "3263"
+    },
+    "cogs": {
+      "hackthebox":true,
+      "other":true
+    },
+    "channels": {
+      "announcement": 798200880209985617
     }
 }
