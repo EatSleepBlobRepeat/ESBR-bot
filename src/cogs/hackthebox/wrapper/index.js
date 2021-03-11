@@ -13,7 +13,12 @@ class HackTheBoxClient {
       headers: HTB_HEADER,
     });
   }
+
+  static getMemberActivity(memberID) {
+    return axios.default.get(`https://www.hackthebox.eu/api/v4/user/profile/activity/${memberID}`, {
+      headers: HTB_HEADER,
+    });
+  }
 }
 
 module.exports = HackTheBoxClient;
-

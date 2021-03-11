@@ -4,9 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 const config = require('./index');
+const TriggerAnnouncement = require('../cogs/hackthebox/polls/triggerAnnouncement');
 
 module.exports = (client) => {
-  // 
+  // inject polling
+  new TriggerAnnouncement().registerPoll(client);
+  // Inject all the commands
   Object.keys(config.cogs).forEach((cog) => {
     if (!config.cogs[cog]) return;
     const dirPath = path.join(__dirname, '../cogs', cog, 'commands');
