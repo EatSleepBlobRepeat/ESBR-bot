@@ -1,7 +1,7 @@
 [
     {
         "date": "2021-03-15T20:40:46.000000Z",
-        "date_diff": "12 hours ago",
+        "date_diff": "13 hours ago",
         "object_type": "challenge",
         "type": "challenge",
         "first_blood": false,
@@ -12,7 +12,7 @@
     },
     {
         "date": "2021-03-15T18:30:09.000000Z",
-        "date_diff": "14 hours ago",
+        "date_diff": "16 hours ago",
         "object_type": "challenge",
         "type": "challenge",
         "first_blood": false,
@@ -23,7 +23,7 @@
     },
     {
         "date": "2021-03-15T16:46:32.000000Z",
-        "date_diff": "16 hours ago",
+        "date_diff": "17 hours ago",
         "object_type": "challenge",
         "type": "challenge",
         "first_blood": false,
