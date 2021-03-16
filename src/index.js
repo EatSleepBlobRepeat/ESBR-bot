@@ -1,13 +1,16 @@
 /* eslint-disable global-require */
 const Discord = require('discord.js');
 const BOT_CONFIG = require('./config');
-const { generateResource } = require('./modules/resourceManager');
+const { generateResource, loadResource } = require('./cogs/hackthebox/utils/resourceManager');
 
 (async () => {
   await generateResource();
+  const loadedResource = await loadResource();
   const client = new Discord.Client({ disableEveryone: false });
   const commandHandler = require('./config/injectCogs');
-
+  Object.keys(loadedResource).forEach((resource) => {
+    client[resource] = loadedResource[resource];
+  });
   client.commands = new Discord.Collection();
   commandHandler(client);
 

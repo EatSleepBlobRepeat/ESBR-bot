@@ -4,5 +4,5 @@ const executeFunc = (msg) => {
   msg.channel.send('Worldddd');
 };
 module.exports = [
-  new Command('hello', 'world', executeFunc),
+  new Command('hello', '| sends \'world\'', executeFunc),
 ];

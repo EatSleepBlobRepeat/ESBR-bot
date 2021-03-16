@@ -12,7 +12,7 @@ const MEMBER_JSON = require('../../../../resources/dynamic/members.json');
 // const channelId = '736548730416791632';
 const channelId = '819624091317174273';
 const HTBClient = require('../wrapper');
-const { updateMemberActivity } = require('../../../modules/resourceManager');
+const { updateMemberActivity } = require('../utils/resourceManager');
 
 class TriggerAnnouncement {
   registerPoll(client, duration = '*/10 * * * *') {
@@ -73,7 +73,7 @@ class TriggerAnnouncement {
           inline: false,
         }],
       };
-      client.channels.cache.get(channelId).send('@everyone!', { embed });
+      client.channels.cache.get(channelId).send({ embed });
     }
   }
 

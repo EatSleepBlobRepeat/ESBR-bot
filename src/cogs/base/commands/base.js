@@ -5,6 +5,10 @@ class Command {
     this._executeFunc = execute;
   }
 
+  help() {
+    return `${this.name} ${this.description}`;
+  }
+
   execute(msg, args) {
     return this._executeFunc(msg, args);
   }

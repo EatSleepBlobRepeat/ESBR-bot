@@ -10,7 +10,7 @@ const ABUSIVE_MSGS = require('../../../../resources/static/abuse_msgs.json');
 const channelId = '819810961778671636';
 
 class TriggerShameAlert {
-  registerPoll(client, duration = '*/10 * * * *') {
+  registerPoll(client, duration = '0 */12 * * *') {
     cron.schedule(duration, async () => {
       console.log('TriggerShameAlert ran at:', new Date());
       this.pollWork(client);
@@ -26,7 +26,7 @@ class TriggerShameAlert {
         const lastActivity = activityObj[memberID].data.profile.activity.find((a) => a.points > 0) || {};
         const level = this.getLevel(lastActivity);
         if (level.id) {
-          this.sendMessage(client, this.getAbusiveMsg(memberID, level));
+          this.sendMessage(client, this.getAbusiveMsg(client, memberID, level));
         }
       }
     } catch (e) {
@@ -36,10 +36,10 @@ class TriggerShameAlert {
   }
 
   sendMessage(client, msg) {
-    client.channels.cache.get(channelId).send(msg);
+    client.channels.cache.get(channelId).send(...msg);
   }
 
-  getAbusiveMsg(memberID, level) {
+  getAbusiveMsg(client, memberID, level) {
     const member = MEMBER_JSON.find((m) => `${m.id}` === memberID);
     let embedstr = ABUSIVE_MSGS[level.id];
     embedstr = embedstr[Math.floor(Math.random() * embedstr.length)].msg.replace('$__$', level.msg);
@@ -52,8 +52,8 @@ class TriggerShameAlert {
         inline: false,
       }],
     };
-    console.log(embed);
-    return { embed };
+    console.log([client.DiscordHTBUsermap[member.name], { embed }]);
+    return [client.DiscordHTBUsermap[member.name], { embed }];
   }
 
   getLevel(lastActivity) {

@@ -1,7 +1,8 @@
 {
     "prefix":"-",
     "hackthebox":{
-        "team_id": "3263"
+        "team_id": "3263",
+        "min_points": 250
     },
     "cogs": {
       "hackthebox":true,
